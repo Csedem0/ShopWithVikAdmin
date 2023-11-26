@@ -1,7 +1,7 @@
 .topbar {
   width: 100%;
-  height: 50px;
-  background-color: white;
+  height: 70px;
+  background-color: #45b08c;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -18,7 +18,7 @@
 .logo {
   font-weight: bold;
   font-size: 30px;
-  color: #32cd32;
+  color: white;
   cursor: pointer;
 }
 

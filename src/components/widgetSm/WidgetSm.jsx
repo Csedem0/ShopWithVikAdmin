@@ -6,6 +6,7 @@ import { userRequest } from "../../requestMethods";
 
 export default function WidgetSm() {
   const [users, setUsers] = useState([]);
+  console.log(users);
 
   useEffect(() => {
     const getusers = async () => {
@@ -32,6 +33,9 @@ export default function WidgetSm() {
             />
             <div className="widgetSmUser">
               <span className="widgetSmUsername">{user.username}</span>
+            </div>
+            <div className="widgetSmUser">
+              <span className="widgetSmUsername">{user._id}</span>
             </div>
           </li>
         ))}

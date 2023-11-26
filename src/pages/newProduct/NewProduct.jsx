@@ -87,6 +87,7 @@ export default function NewProduct() {
         <div className="addProductItem">
           <label>Title</label>
           <input
+            className="inputpro"
             name="title"
             type="text"
             placeholder="Apple Airpods"
@@ -96,6 +97,7 @@ export default function NewProduct() {
         <div className="addProductItem">
           <label>Description</label>
           <input
+            className="inputpro"
             name="desc"
             type="text"
             placeholder="description..."
@@ -105,6 +107,7 @@ export default function NewProduct() {
         <div className="addProductItem">
           <label>Price</label>
           <input
+            className="inputpro"
             name="price"
             type="number"
             placeholder="100"
@@ -113,11 +116,16 @@ export default function NewProduct() {
         </div>
         <div className="addProductItem">
           <label>Categories</label>
-          <input type="text" placeholder="jeans,skirts" onChange={handleCat} />
+          <input
+            className="inputpro"
+            type="text"
+            placeholder="jeans,skirts"
+            onChange={handleCat}
+          />
         </div>
         <div className="addProductItem">
           <label>Stock</label>
-          <select name="inStock" onChange={handleChange}>
+          <select name="inStock" className="inputpro" onChange={handleChange}>
             <option value="true">Yes</option>
             <option value="false">No</option>
           </select>

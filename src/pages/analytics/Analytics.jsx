@@ -1,5 +1,6 @@
+import React from "react";
 import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
-import "./home.css";
+import "./analytics.css";
 import { userData } from "../../dummyData";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
@@ -11,7 +12,7 @@ import { useEffect } from "react";
 import { userRequest } from "requestMethods";
 import Topbar from "components/topbar/Topbar";
 
-export default function Home() {
+const Analytics = () => {
   const [userStats, setUserStats] = useState([]);
 
   const MONTHS = useMemo(
@@ -50,14 +51,19 @@ export default function Home() {
   console.log(userStats);
 
   return (
-    <div className="home">
-      <FeaturedInfo />
+    <div className="analytics">
       <Chart
         data={userStats}
         title="User Analytics"
         grid
         dataKey="Active User"
       />
+      <div className="chatimg">
+        <img src="https://www.slidegeeks.com/pics/dgm/l/m/Monthly_Sales_Comparison_Percentage_Analysis_Ppt_PowerPoint_Presentation_File_Infographic_Template_PDF_Slide_1-.jpg" />
+        <img src="https://img.etimg.com/thumb/width-640,height-480,imgsize-198388,resizemode-75,msid-83283628/industry/banking/finance/banking/bank-lending-could-remain-subdued-despite-low-rates/indicator-decline-getty.jpg" />
+      </div>
     </div>
   );
-}
+};
+
+export default Analytics;

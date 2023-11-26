@@ -11,22 +11,33 @@ import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "pages/login/Login";
 import Register from "pages/register/Register";
+import AllUser from "pages/allUser/AllUser";
+import Analytics from "pages/analytics/Analytics";
+import Sales from "pages/sales/Sales";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
+      <Topbar />
+      <div className="container">
+        <Sidebar />
 
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/userlist" element={<UserList />} />
-        <Route path="/user" element={<User />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/newuser" element={<NewUser />} />
-        <Route path="/product/:productId" element={<Product />} />
-        <Route path="/newproduct" element={<NewProduct />} />
-      </Routes>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/products" element={<ProductList />} />
+          <Route path="/userlist" element={<UserList />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/newuser" element={<NewUser />} />
+          <Route path="/product/:productId" element={<Product />} />
+          <Route path="/newproduct" element={<NewProduct />} />
+          <Route path="/alluser" element={<AllUser />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/sales" element={<Sales />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

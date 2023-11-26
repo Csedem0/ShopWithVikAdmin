@@ -7,8 +7,9 @@
 }
 
 .sidebarWrapper {
-  padding: 20px;
-  color: #555;
+  padding: 30px;
+
+  color: #191970;
 }
 
 .sidebarMenu {
@@ -16,8 +17,8 @@
 }
 
 .sidebarTitle {
-  font-size: 13px;
-  color: rgb(187, 186, 186);
+  font-size: 20px;
+  color: #45b08c;
 }
 
 .sidebarList {
@@ -38,7 +39,7 @@
   background-color: rgb(240, 240, 255);
 }
 
-.sidebarIcon{
-    margin-right: 5px;
-    font-size: 20px !important;
+.sidebarIcon {
+  margin-right: 5px;
+  font-size: 20px !important;
 }

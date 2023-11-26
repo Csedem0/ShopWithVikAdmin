@@ -7,9 +7,9 @@
 }
 
 .widgetSmTitle {
-  font-size: 22px;
-  font-weight: 600;
-  color: #45b08c;
+  font-size: 30px;
+  font-weight: bold;
+  color: #32cd32;
 }
 
 .widgetSmImg {
@@ -29,7 +29,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0px;
+  padding: 0px 20px;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
 .widgetSmUser {
@@ -39,7 +44,7 @@
 }
 
 .widgetSmUsername {
-  font-weight: 600;
+  font-size: 13px;
 }
 
 .widgetSmUserTitle {
