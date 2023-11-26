@@ -63,7 +63,10 @@ export default function NewProduct() {
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           const product = { ...inputs, img: downloadURL, categories: cat };
+
           addProduct(product, dispatch);
+          console.log(downloadURL);
+          console.log(product);
         });
       }
     );

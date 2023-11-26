@@ -26,7 +26,7 @@ export const login = async (dispatch, navigate, setError, user) => {
     const res = await publicRequest.post("/auth/login", user);
     dispatch(loginSuccess(res.data));
     if (res.status === 200) {
-      navigate("/home");
+      navigate("/");
     }
   } catch (error) {
     dispatch(loginFailure());
@@ -83,6 +83,7 @@ export const addProduct = async (product, dispatch) => {
   try {
     const res = await userRequest.post(`/products`, product);
     dispatch(addProductSuccess(res.data));
+    console.log(res.data);
   } catch (err) {
     dispatch(addProductFailure());
   }
