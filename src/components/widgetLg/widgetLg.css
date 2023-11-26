@@ -8,12 +8,13 @@
 .widgetLgTitle {
   font-size: 22px;
   font-weight: 600;
+  color: #45b08c;
 }
 
 .widgetLgName {
   text-decoration: none;
   margin-bottom: 30px;
-  color: black;
+  color: #191970;
 }
 
 .widgetLgTable {
@@ -24,6 +25,7 @@
 .widgetLgTh {
   text-align: left;
   font-size: 40px;
+  color: green;
 }
 
 .widgetLgUser {

@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useMemo } from "react";
 import { useEffect } from "react";
 import { userRequest } from "requestMethods";
+import Topbar from "components/topbar/Topbar";
 
 export default function Home() {
   const [userStats, setUserStats] = useState([]);
@@ -50,6 +51,7 @@ export default function Home() {
 
   return (
     <div className="home">
+      <Topbar />
       <FeaturedInfo />
       <Chart
         data={userStats}
