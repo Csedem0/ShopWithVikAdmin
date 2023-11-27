@@ -35,6 +35,12 @@ export default function WidgetSm() {
               <span className="widgetSmUsername">{user.username}</span>
             </div>
             <div className="widgetSmUser">
+              <span className="widgetSmUsername">xyz@gmail.com</span>
+            </div>
+            <div className="widgetSmUser">
+              <span className="widgetSmUsername">+234 9159816020</span>
+            </div>
+            <div className="widgetSmUser">
               <span className="widgetSmUsername">{user._id}</span>
             </div>
           </li>

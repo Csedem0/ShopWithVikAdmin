@@ -37,6 +37,12 @@ export default function Sidebar() {
             <Link to="/sales" className="link">
               <li className="sidebarListItem">
                 <TrendingUp className="sidebarIcon" />
+                Sales
+              </li>
+            </Link>
+            <Link to="/leads" className="link">
+              <li className="sidebarListItem">
+                <PermIdentity className="sidebarIcon" />
                 Leads
               </li>
             </Link>
@@ -55,12 +61,6 @@ export default function Sidebar() {
               <li className="sidebarListItem">
                 <AttachMoney className="sidebarIcon" />
                 Create Product
-              </li>
-            </Link>
-            <Link to="/alluser" className="link">
-              <li className="sidebarListItem">
-                <PermIdentity className="sidebarIcon" />
-                Users
               </li>
             </Link>
 
@@ -82,10 +82,6 @@ export default function Sidebar() {
             <li className="sidebarListItem">
               <DynamicFeed className="sidebarIcon" />
               Feedback
-            </li>
-            <li className="sidebarListItem">
-              <ChatBubbleOutline className="sidebarIcon" />
-              Messages
             </li>
           </ul>
         </div>
