@@ -37,10 +37,17 @@
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
+.widgetSmListItem:hover {
+  background-color: #191970;
+  color: white;
+}
+
 .widgetSmUser {
   display: flex;
   flex-direction: column;
-  color: #191970;
+}
+.widgetSmUser:hover {
+  color: white;
 }
 
 .widgetSmUsername {

@@ -67,7 +67,7 @@ export default function Sidebar() {
             <Link to="/newUser" className="link">
               <li className="sidebarListItem">
                 <BarChart className="sidebarIcon" />
-                Create User
+                Create Leads
               </li>
             </Link>
           </ul>

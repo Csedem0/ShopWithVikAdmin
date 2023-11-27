@@ -11,9 +11,43 @@ import { useMemo } from "react";
 import { useEffect } from "react";
 import { userRequest } from "requestMethods";
 import Topbar from "components/topbar/Topbar";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Analytics = () => {
   const [userStats, setUserStats] = useState([]);
+
+  const data = {
+    labels: ["user", "goods", "product"],
+    datasets: [
+      {
+        data: [3, 6, 9],
+        backgroundColor: ["green", "blue", "aqua"],
+      },
+      {
+        data: [3, 6, 9],
+        backgroundColor: ["purple", "orange", "lemon"],
+      },
+    ],
+  };
+
+  const data2 = {
+    labels: ["user", "goods", "product"],
+    datasets: [
+      {
+        data: [9, 4, 2],
+        backgroundColor: ["purple", "orange", "lemon"],
+      },
+      {
+        data: [3, 6, 6],
+        backgroundColor: ["aqua", "blue", "green"],
+      },
+    ],
+  };
+
+  const options = {};
 
   const MONTHS = useMemo(
     () => [
@@ -52,16 +86,22 @@ const Analytics = () => {
 
   return (
     <div className="analytics">
+      <div
+        className="chatimg"
+        style={{
+          padding: "20px",
+          width: "35%",
+        }}
+      >
+        <Pie data={data} options={options}></Pie>
+        <Pie data={data2} options={options}></Pie>
+      </div>
       <Chart
         data={userStats}
         title="User Analytics"
         grid
         dataKey="Active User"
       />
-      <div className="chatimg">
-        <img src="https://www.slidegeeks.com/pics/dgm/l/m/Monthly_Sales_Comparison_Percentage_Analysis_Ppt_PowerPoint_Presentation_File_Infographic_Template_PDF_Slide_1-.jpg" />
-        <img src="https://img.etimg.com/thumb/width-640,height-480,imgsize-198388,resizemode-75,msid-83283628/industry/banking/finance/banking/bank-lending-could-remain-subdued-despite-low-rates/indicator-decline-getty.jpg" />
-      </div>
     </div>
   );
 };
