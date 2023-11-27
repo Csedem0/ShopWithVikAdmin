@@ -10,8 +10,13 @@
   padding: 30px;
   border-radius: 10px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.897);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.932);
+}
+
+.featuredItem:hover {
+  background-color: #191970;
+  color: #fff;
 }
 
 .featuredTitle {
@@ -29,7 +34,6 @@
 .featuredMoney {
   font-size: 30px;
   font-weight: 600;
-  color: #191970;
 }
 
 .featuredMoneyRate {

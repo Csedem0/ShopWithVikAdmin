@@ -37,7 +37,7 @@ export default function Sidebar() {
             <Link to="/sales" className="link">
               <li className="sidebarListItem">
                 <TrendingUp className="sidebarIcon" />
-                Sales
+                Leads
               </li>
             </Link>
           </ul>

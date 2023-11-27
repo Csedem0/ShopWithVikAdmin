@@ -7,9 +7,8 @@ export default function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">CRM SYSTEM</span>
+          <span className="logo">AMARA</span>
         </div>
-        <div className="topRight"></div>
       </div>
     </div>
   );
