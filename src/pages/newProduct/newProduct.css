@@ -48,3 +48,11 @@
 .inputpro {
   width: 150%;
 }
+
+.confirmationPopup {
+  border: 1px solid whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: gray;
+  color: #191970;
+  display: flex;
+}

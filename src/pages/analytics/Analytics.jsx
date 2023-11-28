@@ -91,6 +91,10 @@ const Analytics = () => {
         style={{
           padding: "20px",
           width: "35%",
+          display: "flex",
+          alignItems: "center",
+          flex: 4,
+          gap: "80%",
         }}
       >
         <Pie data={data} options={options}></Pie>

@@ -15,6 +15,8 @@ export default function NewProduct() {
   const [inputs, setInputs] = useState({});
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState([]);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [confirmationMessage, setConfirmationMessage] = useState("");
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -28,6 +30,15 @@ export default function NewProduct() {
 
   const handleClick = (e) => {
     e.preventDefault();
+
+    if (!inputs.title || !inputs.desc || !inputs.price || !cat.length) {
+      setConfirmationMessage("Please fill in all required fields");
+      setIsSubmitted(true);
+      return;
+    }
+
+    setIsSubmitted(true);
+
     const fileName = new Date().getTime() + file.name;
     const storage = getStorage(app);
     const storageRef = ref(storage, fileName);
@@ -65,6 +76,17 @@ export default function NewProduct() {
           const product = { ...inputs, img: downloadURL, categories: cat };
 
           addProduct(product, dispatch);
+
+          setConfirmationMessage("Product created successfully!");
+          setTimeout(() => {
+            setConfirmationMessage("");
+            setIsSubmitted(false);
+            // Reset form inputs
+            setInputs({});
+            setFile(null);
+            setCat([]);
+          }, 4000); // Display confirmation message for 2 seconds
+
           console.log(downloadURL);
           console.log(product);
         });
@@ -75,6 +97,12 @@ export default function NewProduct() {
   return (
     <div className="newProduct">
       <h1 className="addProductTitle">New Product</h1>
+      {isSubmitted && (
+        <div className="confirmationPopup">
+          <p>{confirmationMessage}</p>
+          <button onClick={() => setIsSubmitted(false)}>Close</button>
+        </div>
+      )}
       <form className="addProductForm">
         <div className="addProductItem">
           <label>Image</label>
