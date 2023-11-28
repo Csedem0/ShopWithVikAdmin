@@ -40,19 +40,24 @@ export default function Sidebar() {
                 Sales
               </li>
             </Link>
-
-            <select className="sidebarListItem">
-              <Link to="/leads" className="link">
+            <Link to="/leads" className="link">
+              <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Leads
-              </Link>
-              <Link to="/newUser" className="link">
-                <li className="sidebarListItem">
-                  <BarChart className="sidebarIcon" />
-                  Create Leads
-                </li>
-              </Link>
-            </select>
+              </li>
+            </Link>
+            <Link to="/newUser" className="link">
+              <li className="sidebarListItem">
+                <BarChart className="sidebarIcon" />
+                Create Leads
+              </li>
+            </Link>
+            <Link to="/newUser" className="link">
+              <li className="sidebarListItem">
+                <BarChart className="sidebarIcon" />
+                Activities
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">
