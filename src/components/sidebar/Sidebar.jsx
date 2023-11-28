@@ -40,12 +40,19 @@ export default function Sidebar() {
                 Sales
               </li>
             </Link>
-            <Link to="/leads" className="link">
-              <li className="sidebarListItem">
+
+            <select className="sidebarListItem">
+              <Link to="/leads" className="link">
                 <PermIdentity className="sidebarIcon" />
                 Leads
-              </li>
-            </Link>
+              </Link>
+              <Link to="/newUser" className="link">
+                <li className="sidebarListItem">
+                  <BarChart className="sidebarIcon" />
+                  Create Leads
+                </li>
+              </Link>
+            </select>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -61,13 +68,6 @@ export default function Sidebar() {
               <li className="sidebarListItem">
                 <AttachMoney className="sidebarIcon" />
                 Create Product
-              </li>
-            </Link>
-
-            <Link to="/newUser" className="link">
-              <li className="sidebarListItem">
-                <BarChart className="sidebarIcon" />
-                Create Leads
               </li>
             </Link>
           </ul>
