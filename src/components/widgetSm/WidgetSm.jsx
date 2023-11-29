@@ -11,7 +11,7 @@ export default function WidgetSm() {
   useEffect(() => {
     const getusers = async () => {
       try {
-        const res = await userRequest.get("users?new=true");
+        const res = await userRequest.get("users");
         setUsers(res.data);
       } catch {}
     };

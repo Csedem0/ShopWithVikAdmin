@@ -13,6 +13,7 @@ import Login from "pages/login/Login";
 import Register from "pages/register/Register";
 import AllUser from "pages/allUser/AllUser";
 import Analytics from "pages/analytics/Analytics";
+import Activities from "pages/activities/Activities";
 import Sales from "pages/sales/Sales";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/newproduct" element={<NewProduct />} />
           <Route path="/leads" element={<AllUser />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/activities" element={<Activities />} />
           <Route path="/sales" element={<Sales />} />
         </Routes>
       </div>

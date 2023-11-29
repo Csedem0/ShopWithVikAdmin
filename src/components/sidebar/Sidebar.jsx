@@ -52,7 +52,7 @@ export default function Sidebar() {
                 Create Leads
               </li>
             </Link>
-            <Link to="/newUser" className="link">
+            <Link to="/activities" className="link">
               <li className="sidebarListItem">
                 <BarChart className="sidebarIcon" />
                 Activities

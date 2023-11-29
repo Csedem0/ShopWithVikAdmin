@@ -26,10 +26,6 @@ const Analytics = () => {
         data: [3, 6, 9],
         backgroundColor: ["green", "blue", "aqua"],
       },
-      {
-        data: [3, 6, 9],
-        backgroundColor: ["purple", "orange", "lemon"],
-      },
     ],
   };
 
@@ -94,7 +90,7 @@ const Analytics = () => {
         }}
       >
         <Pie data={data} options={options}></Pie>
-        <Pie data={data} options={options}></Pie>
+        <Pie data={data2} options={options}></Pie>
       </div>
       <Chart
         data={userStats}

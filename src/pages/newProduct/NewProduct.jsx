@@ -107,7 +107,7 @@ export default function NewProduct() {
       <h1 className="addProductTitle">New Product</h1>
       {isSubmitted && (
         <div className="confirmationPopup">
-          <p>{confirmationMessage}</p>
+          <p className="textconfirmationPopup">{confirmationMessage}</p>
           <button onClick={() => setIsSubmitted(false)}>Close</button>
         </div>
       )}
@@ -171,14 +171,6 @@ export default function NewProduct() {
           Create
         </button>
       </form>
-      <div class="popup" id="popup">
-        <h2>Thank You</h2>
-        <p>{confirmationMessage}</p>
-        <button onClick={() => setIsSubmitted(false)}>Close</button>
-        <button type="button" onclick="closePop()">
-          OK
-        </button>
-      </div>
     </div>
   );
 }
