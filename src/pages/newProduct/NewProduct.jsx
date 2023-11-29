@@ -19,6 +19,14 @@ export default function NewProduct() {
   const [confirmationMessage, setConfirmationMessage] = useState("");
   const dispatch = useDispatch();
 
+  let popup = document.getElementById("popup");
+  function openPop() {
+    popup.classList.add("open-Pop");
+  }
+  function closePop() {
+    popup.classList.remove("open-Pop");
+  }
+
   const handleChange = (e) => {
     setInputs((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
@@ -163,6 +171,14 @@ export default function NewProduct() {
           Create
         </button>
       </form>
+      <div class="popup" id="popup">
+        <h2>Thank You</h2>
+        <p>{confirmationMessage}</p>
+        <button onClick={() => setIsSubmitted(false)}>Close</button>
+        <button type="button" onclick="closePop()">
+          OK
+        </button>
+      </div>
     </div>
   );
 }

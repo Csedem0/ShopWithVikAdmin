@@ -34,15 +34,11 @@ const Analytics = () => {
   };
 
   const data2 = {
-    labels: ["user", "goods", "product"],
+    labels: ["User", "Goods", "Product"],
     datasets: [
       {
         data: [9, 4, 2],
-        backgroundColor: ["purple", "orange", "lemon"],
-      },
-      {
-        data: [3, 6, 6],
-        backgroundColor: ["aqua", "blue", "green"],
+        backgroundColor: ["green", "blue", "lemon"],
       },
     ],
   };
@@ -98,7 +94,7 @@ const Analytics = () => {
         }}
       >
         <Pie data={data} options={options}></Pie>
-        <Pie data={data2} options={options}></Pie>
+        <Pie data={data} options={options}></Pie>
       </div>
       <Chart
         data={userStats}
