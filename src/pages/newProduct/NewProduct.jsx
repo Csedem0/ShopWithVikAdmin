@@ -107,7 +107,9 @@ export default function NewProduct() {
       <h1 className="addProductTitle">New Product</h1>
       {isSubmitted && (
         <div className="confirmationPopup">
-          <p className="textconfirmationPopup">{confirmationMessage}</p>
+          <p className="textconfirmationPopup">
+            loading..{confirmationMessage}
+          </p>
           <button onClick={() => setIsSubmitted(false)}>Close</button>
         </div>
       )}
