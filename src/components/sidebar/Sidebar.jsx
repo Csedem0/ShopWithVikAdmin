@@ -78,7 +78,7 @@ export default function Sidebar() {
             <Link to="/analysis" className="link">
               <li className="sidebarListItem">
                 <AttachMoney className="sidebarIcon" />
-                Analysis
+                Predictive Analysis
               </li>
             </Link>
           </ul>

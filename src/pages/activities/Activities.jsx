@@ -28,8 +28,8 @@ const Activities = () => {
   useEffect(() => {
     // Generate a random number every 5 seconds
     const intervalId = setInterval(() => {
-      const min = 4; // Minimum range
-      const max = 9; // Maximum range
+      const min = 5; // Minimum range
+      const max = 11; // Maximum range
 
       // Generate a new random number between min and max
       const newRandomView = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -45,8 +45,8 @@ const Activities = () => {
   useEffect(() => {
     // Generate a random number every 5 seconds
     const intervalId = setInterval(() => {
-      const min = 14; // Minimum range
-      const max = 20; // Maximum range
+      const min = 17; // Minimum range
+      const max = 22; // Maximum range
 
       // Generate a new random number between min and max
       const newRandomNumber = Math.floor(Math.random() * (max - min + 1)) + min;

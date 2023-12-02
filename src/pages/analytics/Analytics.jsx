@@ -20,7 +20,7 @@ const Analytics = () => {
   const [userStats, setUserStats] = useState([]);
 
   const data = {
-    labels: ["user", "goods", "product"],
+    labels: ["User", "Goods", "Product"],
     datasets: [
       {
         data: [3, 6, 9],
