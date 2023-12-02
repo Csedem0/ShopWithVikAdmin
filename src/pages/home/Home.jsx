@@ -10,6 +10,7 @@ import { useMemo } from "react";
 import { useEffect } from "react";
 import { userRequest } from "requestMethods";
 import Topbar from "components/topbar/Topbar";
+import Sidebar from "components/sidebar/Sidebar";
 
 export default function Home() {
   const [userStats, setUserStats] = useState([]);

@@ -9,7 +9,7 @@ import { mobile } from "../../responsive";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: wheat;
+  background-color: white;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
-  background-color: wheat;
+  background-color: white;
   ${mobile({ width: "75%" })}
 `;
 
@@ -87,7 +87,7 @@ const Login = () => {
       <Wrapper>
         <Title>
           <div className="not-italic text-red-500 text-opacity-100 text-lg ">
-            Login! To Place Your Orders😊
+            Login!
           </div>
         </Title>
         <Form>
@@ -106,13 +106,6 @@ const Login = () => {
           </Button>
 
           {error && <Error>{error}</Error>}
-          <Forword>
-            <Link to="/register">
-              <div className="not-italic text-red-500 text-opacity-100">
-                Sign Up Here
-              </div>
-            </Link>
-          </Forword>
         </Form>
       </Wrapper>
     </Container>

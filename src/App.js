@@ -9,13 +9,12 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
-import Login from "pages/login/Login";
-import Register from "pages/register/Register";
 import AllUser from "pages/allUser/AllUser";
 import Analytics from "pages/analytics/Analytics";
 import Activities from "pages/activities/Activities";
 import Sales from "pages/sales/Sales";
 import Analysis from "pages/analysis/Analysis";
+import Message from "pages/message/Message";
 
 function App() {
   return (
@@ -23,15 +22,11 @@ function App() {
       <Topbar />
       <div className="container">
         <Sidebar />
-
         <Routes>
-          <Route path="/login" element={<Login />} />
-
           <Route path="/products" element={<ProductList />} />
           <Route path="/userlist" element={<UserList />} />
           <Route path="/user" element={<User />} />
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/newuser" element={<NewUser />} />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/newproduct" element={<NewProduct />} />
@@ -40,6 +35,7 @@ function App() {
           <Route path="/activities" element={<Activities />} />
           <Route path="/sales" element={<Sales />} />
           <Route path="/analysis" element={<Analysis />} />
+          <Route path="/mail" element={<Message />} />
         </Routes>
       </div>
     </Router>
