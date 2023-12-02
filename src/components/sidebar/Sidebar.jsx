@@ -75,6 +75,12 @@ export default function Sidebar() {
                 Create Product
               </li>
             </Link>
+            <Link to="/analysis" className="link">
+              <li className="sidebarListItem">
+                <AttachMoney className="sidebarIcon" />
+                Analysis
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -88,12 +94,6 @@ export default function Sidebar() {
               <DynamicFeed className="sidebarIcon" />
               Feedback
             </li>
-            <Link to="/analysis" className="link">
-              <li className="sidebarListItem">
-                <Storefront className="sidebarIcon" />
-                Analysis
-              </li>
-            </Link>
           </ul>
         </div>
       </div>
