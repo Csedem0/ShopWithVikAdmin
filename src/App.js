@@ -15,6 +15,7 @@ import AllUser from "pages/allUser/AllUser";
 import Analytics from "pages/analytics/Analytics";
 import Activities from "pages/activities/Activities";
 import Sales from "pages/sales/Sales";
+import Analysis from "pages/analysis/Analysis";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/sales" element={<Sales />} />
+          <Route path="/analysis" element={<Analysis />} />
         </Routes>
       </div>
     </Router>

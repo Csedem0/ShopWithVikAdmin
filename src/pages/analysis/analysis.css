@@ -1,0 +1,42 @@
+#content-box {
+  width: 550px;
+  height: fit-content;
+  background-color: grey;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+#calculate {
+  width: 150px;
+  height: 50px;
+  background-color: #32cd32;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#resultPercent {
+  font-size: 50px;
+}
+.year,
+.month {
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.all {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.Analysis {
+  flex: 3;
+}
+
+.Analysist {
+  color: #32cd32;
+}

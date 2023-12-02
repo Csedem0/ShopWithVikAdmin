@@ -88,6 +88,12 @@ export default function Sidebar() {
               <DynamicFeed className="sidebarIcon" />
               Feedback
             </li>
+            <Link to="/analysis" className="link">
+              <li className="sidebarListItem">
+                <Storefront className="sidebarIcon" />
+                Analysis
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
