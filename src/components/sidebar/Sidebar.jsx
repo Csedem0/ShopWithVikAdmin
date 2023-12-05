@@ -43,7 +43,7 @@ export default function Sidebar() {
             <Link to="/leads" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
-                Leads
+                Manage Leads
               </li>
             </Link>
             <Link to="/newUser" className="link">

@@ -74,9 +74,7 @@ const Activities = () => {
           <div className="activeMoneyContainer">
             <span className="activeMoney">{randomNumber}</span>
           </div>
-          <span className="featuredSub">
-            Users interaction with the website
-          </span>
+          <span className="featuredSub">Users interaction</span>
         </div>
         <div className="salesItem">
           <span className="featuredTitle">Active Users</span>
