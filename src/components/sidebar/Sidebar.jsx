@@ -89,7 +89,7 @@ export default function Sidebar() {
             <Link to="/mail" className="link">
               <li className="sidebarListItem">
                 <MailOutline className="sidebarIcon" />
-                Mail
+                Feedback
               </li>
             </Link>
           </ul>

@@ -6,7 +6,7 @@ const Sales = () => {
     <div className="sale">
       <div className="featured1">
         <div className="salesItem">
-          <span className="featuredTitle">Revanue</span>
+          <span className="featuredTitle">Revenue</span>
           <div className="featuredMoneyContainer">
             <span className="featuredMoney">$2,415</span>
             <span className="featuredMoneyRate">

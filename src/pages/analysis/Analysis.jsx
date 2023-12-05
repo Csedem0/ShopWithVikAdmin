@@ -1,49 +1,129 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Chart from "chart.js/auto";
 import "./analysis.css";
 
 const Analysis = () => {
   const [firstNum, setFirstNum] = useState("");
   const [secondNum, setSecondNum] = useState("");
   const [thirdNum, setThirdNum] = useState("");
-  const [resultMessage1, setResultMessage1] = useState("");
-  const [resultPercent, setResultPercent] = useState("");
-  const [resultMessage2, setResultMessage2] = useState("");
-  const [resultMessage3, setResultMessage3] = useState("");
+  const [myChart, setMyChart] = useState(null);
 
-  const handleCalculate = () => {
+  useEffect(() => {
+    const button = document.getElementById("calculate");
+    button.addEventListener("click", calculatePro);
+    return () => {
+      button.removeEventListener("click", calculatePro);
+    };
+  }, []);
+
+  const calculatePro = () => {
+    document.getElementById("resultMessage1").innerText = "Calculating.....";
+    document.getElementById("resultPercent").innerText = "";
+
     if (firstNum !== "" && secondNum !== "" && thirdNum !== "") {
-      const num1 = parseFloat(firstNum);
-      const num2 = parseFloat(secondNum);
-      const num3 = parseFloat(thirdNum);
+      setTimeout(() => {
+        const num1 = parseFloat(firstNum);
+        const num2 = parseFloat(secondNum);
+        const num3 = parseFloat(thirdNum);
 
-      if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
-        const sum = num1 + num2 + num3;
-        const average = Math.floor((sum / 3) % 101); // Use modulus operator to ensure the result stays within 0-100
-
-        setResultMessage1("You will likely get a sale of");
-        setResultPercent(average + "%");
-      } else {
-        setResultMessage2("Please enter valid numbers");
-        setResultPercent("");
-      }
+        if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
+          const sum = num1 + num2 + num3;
+          const average = Math.floor(sum / 3);
+          document.getElementById("resultMessage1").innerText =
+            "You will likely get a sale of";
+          const wrappedAverage = average % 101;
+          document.getElementById("resultPercent").innerText =
+            wrappedAverage + "%";
+          updateChart([num1, num2, num3, average]);
+          document.getElementById("resultMessage4").innerText =
+            "based on previous Sale";
+        } else {
+          document.getElementById("resultMessage2").innerText =
+            "Please enter valid numbers";
+          document.getElementById("resultPercent").innerText = "";
+        }
+      }, 1000);
     } else {
-      setResultMessage3("Please enter all numbers");
-      setResultPercent("");
+      document.getElementById("resultMessage3").innerText =
+        "Please enter all numbers";
+      document.getElementById("resultPercent").innerText = "";
+    }
+  };
+
+  const updateChart = (data) => {
+    if (myChart) {
+      myChart.data.datasets[0].data = data;
+      myChart.update();
+    } else {
+      const ctx = document.getElementById("myChart").getContext("2d");
+      const newChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: [
+            "Two Month Sales",
+            "One Month Sales",
+            "Current Month Sales",
+            "Next Month Sales",
+          ],
+          datasets: [
+            {
+              label: "Values",
+              data: data,
+              backgroundColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          indexAxis: "y",
+          plugins: {
+            title: {
+              display: true,
+              text: "Sales",
+              color: "black",
+            },
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: "black",
+              },
+            },
+            y: {
+              beginAtZero: true,
+              max: 500000,
+            },
+          },
+        },
+      });
+      setMyChart(newChart);
     }
   };
 
   return (
-    <div className="Analysis">
-      <h1 className="Analysist">Predictive Analysis</h1>
+    <div id="content-box">
+      <h1>Predictive Analysis</h1>
+      <br />
       <p>Enter your value to see possible sales for next Month</p>
-
+      <br />
       <div className="yearMonth">
         <select
           className="year"
           name="year"
-          required="true"
+          required={true}
           id=""
-          aria-required="true"
+          aria-required={true}
         >
           <option value="">Select Year</option>
           <option value="2023">2023</option>
@@ -52,18 +132,19 @@ const Analysis = () => {
         <select
           className="month"
           name="month"
-          required="true"
+          required={true}
           id=""
-          aria-required="true"
+          aria-required={true}
         >
-          <option value="">Select Year</option>
+          <option value="">Select Month</option>
           <option value="nMonth">Next Month</option>
         </select>
       </div>
-
+      <br />
+      <br />
       <div className="all">
         <div className="left">
-          <label for="firstNum">Last Two Month Sales: </label>
+          <label htmlFor="firstNum">Last Two Month Sales: </label>
         </div>
         <div className="right">
           <input
@@ -72,15 +153,15 @@ const Analysis = () => {
             name="firstNum"
             className="right"
             required
-            value={firstNum}
             onChange={(e) => setFirstNum(e.target.value)}
           />
+          <br />
+          <br />
         </div>
       </div>
-
       <div className="all">
         <div className="left">
-          <label for="secondNum">Last Month Sales: </label>
+          <label htmlFor="secondNum">Last Month Sales: </label>
         </div>
         <div className="right">
           <input
@@ -89,15 +170,15 @@ const Analysis = () => {
             name="secondNum"
             className="right"
             required
-            value={secondNum}
             onChange={(e) => setSecondNum(e.target.value)}
           />
+          <br />
+          <br />
         </div>
       </div>
-
       <div className="all">
         <div className="left">
-          <label for="thirdNum">Current Month Sales: </label>
+          <label htmlFor="thirdNum">Current Month Sales: </label>
         </div>
         <div className="right">
           <input
@@ -106,23 +187,26 @@ const Analysis = () => {
             name="thirdNum"
             className="right"
             required
-            value={thirdNum}
             onChange={(e) => setThirdNum(e.target.value)}
           />
+          <br />
+          <br />
         </div>
       </div>
 
-      <button id="calculate" onClick={handleCalculate}>
+      <button id="calculate" onClick={calculatePro}>
         Calculate
       </button>
-
       <br />
       <br />
-
-      <h2 id="resultMessage1">{resultMessage1}</h2>
-      <p id="resultPercent">{resultPercent}</p>
-      <h2 id="resultMessage2">{resultMessage2}</h2>
-      <h2 id="resultMessage3">{resultMessage3}</h2>
+      <br />
+      <br />
+      <h2 id="resultMessage1"></h2>
+      <p id="resultPercent"></p>
+      <h2 id="resultMessage2"></h2>
+      <h2 id="resultMessage3"></h2>
+      <h2 id="resultMessage4"></h2>
+      <canvas id="myChart" width="150" height="50"></canvas>
     </div>
   );
 };

@@ -1,11 +1,12 @@
 #content-box {
   width: 550px;
   height: fit-content;
-  background-color: grey;
+  background-color: white;
   padding: 20px;
   margin: 0 auto;
   margin-top: 50px;
   border-radius: 10px;
+  flex: 4;
 }
 #calculate {
   width: 150px;
