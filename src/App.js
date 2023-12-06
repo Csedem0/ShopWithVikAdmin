@@ -15,6 +15,7 @@ import Activities from "pages/activities/Activities";
 import Sales from "pages/sales/Sales";
 import Analysis from "pages/analysis/Analysis";
 import Message from "pages/message/Message";
+import SalesMetric from "pages/salesMetric/SalesMetric";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/sales" element={<Sales />} />
           <Route path="/analysis" element={<Analysis />} />
           <Route path="/mail" element={<Message />} />
+          <Route path="/salesmetric" element={<SalesMetric />} />
         </Routes>
       </div>
     </Router>

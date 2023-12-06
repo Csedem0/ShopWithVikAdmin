@@ -13,6 +13,9 @@ import { userRequest } from "requestMethods";
 import Topbar from "components/topbar/Topbar";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -30,11 +33,11 @@ const Analytics = () => {
   };
 
   const data2 = {
-    labels: ["User", "Goods", "Product"],
+    labels: ["Goods", "Interactions", "Users"],
     datasets: [
       {
-        data: [9, 4, 2],
-        backgroundColor: ["green", "blue", "lemon"],
+        data: [40, 24, 18],
+        backgroundColor: ["green", "blue", "aquas"],
       },
     ],
   };
@@ -76,6 +79,39 @@ const Analytics = () => {
 
   console.log(userStats);
 
+  const pieChartData = {
+    labels: userStats.map((data) => data.name),
+    datasets: [
+      {
+        data: userStats.map((data) => data["Active User"]),
+        backgroundColor: ["green", "blue", "aqua", "lemon", "lightblue"],
+      },
+    ],
+  };
+
+  const barChartData = {
+    labels: userStats.map((data) => data.name),
+    datasets: [
+      {
+        label: "Active Users",
+        data: userStats.map((data) => data["Active User"]),
+        backgroundColor: "rgba(54, 162, 235, 0.6)", // Adjust color as needed
+        borderColor: "rgba(54, 162, 235, 1)",
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const donutChartData = {
+    labels: userStats.map((data) => data.name),
+    datasets: [
+      {
+        data: userStats.map((data) => data["Active User"]),
+        backgroundColor: ["green", "blue", "aqua", "lemon", "lightblue"],
+      },
+    ],
+  };
+
   return (
     <div className="analytics">
       <div
@@ -89,15 +125,34 @@ const Analytics = () => {
           gap: "80%",
         }}
       >
-        <Pie data={data} options={options}></Pie>
-        <Pie data={data2} options={options}></Pie>
+        <Pie data={pieChartData} options={options}></Pie>
+        <Doughnut data={donutChartData} options={options} />
       </div>
+      <Bar data={barChartData} options={options} width={500} />
       <Chart
         data={userStats}
         title="User Analytics"
         grid
         dataKey="Active User"
       />
+      <LineChart width={1000} height={300} data={userStats}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis
+          dataKey="Active User"
+          label={{ value: "Month", position: "insideBottomRight", offset: 0 }}
+        />
+        <YAxis
+          label={{ value: "Active Users", angle: -90, position: "insideLeft" }}
+        />
+        <Tooltip />
+        <Legend
+          payload={[
+            { value: "Active Users", type: "line", color: "blue" }, // Custom label for the legend
+          ]}
+        />
+
+        <Line type="monotone" dataKey="Active User" stroke="#8884d8" />
+      </LineChart>
     </div>
   );
 };

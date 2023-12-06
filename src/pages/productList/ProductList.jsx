@@ -18,6 +18,7 @@ export default function ProductList() {
     deleteProduct(id, dispatch);
   };
 
+  // Define columns dynamically based on availability
   const columns = [
     { field: "_id", headerName: "ID", width: 220 },
     {
@@ -33,13 +34,7 @@ export default function ProductList() {
         );
       },
     },
-    { field: "inStock", headerName: "Stock", width: 200 },
-
-    {
-      field: "price",
-      headerName: "Price",
-      width: 160,
-    },
+    { field: "price", headerName: "Price", width: 160 },
     {
       field: "action",
       headerName: "Action",
@@ -57,6 +52,15 @@ export default function ProductList() {
     },
   ];
 
+  // Check if any product is unavailable (inStock === false)
+  const hasUnavailableProducts = products.some((product) => !product.inStock);
+
+  // Conditionally add the Stock column based on availability
+  if (!hasUnavailableProducts) {
+    columns.splice(2, 0, { field: "inStock", headerName: "Stock", width: 200 });
+  }
+
+  // Render the DataGrid with dynamically adjusted columns
   return (
     <div className="productList">
       <DataGrid

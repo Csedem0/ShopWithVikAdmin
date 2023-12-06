@@ -5,6 +5,16 @@ import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import Navbar from "pages/Navbar";
 import Chart from "../../components/chart/Chart";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  Legend,
+} from "recharts";
+
 import { useState } from "react";
 import { useMemo } from "react";
 import { useEffect } from "react";
@@ -24,7 +34,7 @@ export default function Home() {
       "May",
       "Jun",
       "Jul",
-      "Agu",
+      "Aug",
       "Sep",
       "Oct",
       "Nov",
@@ -60,6 +70,19 @@ export default function Home() {
         grid
         dataKey="Active User"
       />
+      <LineChart width={1000} height={300} data={userStats}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis
+          dataKey="Active User"
+          label={{ value: "Month", position: "insideBottomRight", offset: 0 }}
+        />
+        <YAxis
+          label={{ value: "Active Users", angle: -90, position: "insideLeft" }}
+        />
+        <Tooltip />
+        <Legend />
+        <Line type="monotone" dataKey="Active User" stroke="#8884d8" />
+      </LineChart>
     </div>
   );
 }

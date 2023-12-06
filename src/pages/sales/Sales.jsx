@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./sales.css";
 import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
 
@@ -18,7 +19,9 @@ const Sales = () => {
         <div className="salesItem">
           <span className="featuredTitle">Sales</span>
           <div className="featuredMoneyContainer">
-            <span className="featuredMoney">$4,415</span>
+            <Link to="/salesmetric">
+              <span className="featuredMoney">$4,415</span>
+            </Link>
             <span className="featuredMoneyRate">
               -1.4 <ArrowDownward className="featuredIcon negative" />
             </span>
