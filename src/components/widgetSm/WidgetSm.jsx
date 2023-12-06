@@ -32,15 +32,19 @@ export default function WidgetSm() {
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
+              <div>USERNAME</div>
               <span className="widgetSmUsername">{user.username}</span>
             </div>
             <div className="widgetSmUser">
+              <div>MAIL ADDRESS</div>
               <span className="widgetSmUsername">xyz@gmail.com</span>
             </div>
             <div className="widgetSmUser">
+              <div>CONTACT</div>
               <span className="widgetSmUsername">+234 9000000000</span>
             </div>
             <div className="widgetSmUser">
+              <div>USER ID</div>
               <span className="widgetSmUsername">{user._id}</span>
             </div>
           </li>

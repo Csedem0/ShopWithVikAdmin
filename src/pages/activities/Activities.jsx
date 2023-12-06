@@ -74,7 +74,7 @@ const Activities = () => {
           <div className="activeMoneyContainer">
             <span className="activeMoney">{randomNumber}</span>
           </div>
-          <span className="featuredSub">Users interaction</span>
+          <span className="featuredSub">All Users interaction</span>
         </div>
         <div className="salesItem">
           <span className="featuredTitle">Active Users</span>
@@ -82,6 +82,13 @@ const Activities = () => {
             <span className="activeMoney">{randomView}</span>
           </div>
           <span className="featuredSub">Number of active users</span>
+        </div>
+
+        <div
+          className="analyzes"
+          href="https://analytics.google.com/analytics/web/?authuser=1#/p417530295/reports/intelligenthome"
+        >
+          More Analysis
         </div>
       </div>
     </div>
