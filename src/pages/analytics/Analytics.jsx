@@ -125,8 +125,14 @@ const Analytics = () => {
           gap: "80%",
         }}
       >
-        <Pie data={pieChartData} options={options}></Pie>
-        <Doughnut data={donutChartData} options={options} />
+        <div className="firstt">
+          <div className="secondd">Leads Chart</div>
+          <Pie data={pieChartData} options={options} />
+        </div>
+        <div className="firstt">
+          <div className="secondd">Donut Leads Chart</div>
+          <Doughnut data={donutChartData} options={options} />
+        </div>
       </div>
       <Bar data={barChartData} options={options} width={500} />
       <Chart
