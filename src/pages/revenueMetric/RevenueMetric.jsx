@@ -206,7 +206,7 @@ const SalesMetric = () => {
       <nav>
         <h1>Revenue</h1>
       </nav>
-      <p>Click below on the selected options to filter the sales metric;</p>
+      <p>Click below on the selected options to filter the revenue metric;</p>
       <div className="option">
         <div className="sales">
           <select className="sale" id="saleFilter">

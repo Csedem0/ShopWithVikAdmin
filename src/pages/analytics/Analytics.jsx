@@ -53,7 +53,7 @@ const Analytics = () => {
       "May",
       "Jun",
       "Jul",
-      "Agu",
+      "Aug",
       "Sep",
       "Oct",
       "Nov",

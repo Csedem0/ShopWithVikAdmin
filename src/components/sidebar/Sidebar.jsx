@@ -37,15 +37,10 @@ export default function Sidebar() {
             <Link to="/sales" className="link">
               <li className="sidebarListItem">
                 <TrendingUp className="sidebarIcon" />
-                Sales
+                Account
               </li>
             </Link>
-            <Link to="/revenue" className="link">
-              <li className="sidebarListItem">
-                <TrendingUp className="sidebarIcon" />
-                Revenue
-              </li>
-            </Link>
+
             <Link to="/leads" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />

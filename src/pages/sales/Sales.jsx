@@ -9,8 +9,8 @@ const Sales = () => {
         <div className="salesItem">
           <span className="featuredTitle">Sales</span>
           <div className="featuredMoneyContainer">
-            <Link to="/salesmetric">
-              <span className="featuredMoney">$4,415</span>
+            <Link to="/revenuemetric">
+              <span className="featuredMoney">$2,415</span>
             </Link>
             <span className="featuredMoneyRate">
               -1.4 <ArrowDownward className="featuredIcon negative" />
@@ -18,6 +18,15 @@ const Sales = () => {
           </div>
           <span className="featuredSub">Compared to last month</span>
         </div>
+        <div className="featuredMoneyContainer">
+          <Link to="/salesmetric">
+            <span className="featuredMoney">$4,415</span>
+          </Link>
+          <span className="featuredMoneyRate">
+            -1.4 <ArrowDownward className="featuredIcon negative" />
+          </span>
+        </div>
+        <span className="featuredSub">Compared to last month</span>
       </div>
     </div>
   );
