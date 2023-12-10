@@ -83,13 +83,12 @@ const Activities = () => {
           </div>
           <span className="featuredSub">Number of active users</span>
         </div>
-
-        <div
-          className="analyzes"
+        <a
+          className="kii"
           href="https://analytics.google.com/analytics/web/?authuser=1#/p417530295/reports/intelligenthome"
         >
-          More Analysis
-        </div>
+          <div className="analyzes">More Analysis</div>
+        </a>
       </div>
     </div>
   );
