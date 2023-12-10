@@ -126,11 +126,11 @@ const Analytics = () => {
         }}
       >
         <div className="firstt">
-          <div className="secondd">Leads Chart</div>
+          <div className="secondd">Leads </div>
           <Pie data={pieChartData} options={options} />
         </div>
         <div className="firstt">
-          <div className="secondd">Donut Leads Chart</div>
+          <div className="secondd">Sales</div>
           <Doughnut data={donutChartData} options={options} />
         </div>
       </div>

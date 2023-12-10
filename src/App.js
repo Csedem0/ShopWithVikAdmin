@@ -16,6 +16,7 @@ import Sales from "pages/sales/Sales";
 import Analysis from "pages/analysis/Analysis";
 import Message from "pages/message/Message";
 import SalesMetric from "pages/salesMetric/SalesMetric";
+import Login from "pages/login/Login";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/products" element={<ProductList />} />
           <Route path="/userlist" element={<UserList />} />
           <Route path="/user" element={<User />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="/newuser" element={<NewUser />} />
           <Route path="/product/:productId" element={<Product />} />
