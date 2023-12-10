@@ -135,28 +135,21 @@ const Analytics = () => {
         </div>
       </div>
       <Bar data={barChartData} options={options} width={500} />
-      <Chart
+      <LineChart
+        width={1000}
+        height={300}
         data={userStats}
         title="User Analytics"
         grid
-        dataKey="Active User"
-      />
-      <LineChart width={1000} height={300} data={userStats}>
+        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+      >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-          dataKey="Active User"
-          label={{ value: "Month", position: "insideBottomRight", offset: 0 }}
-        />
+        <XAxis dataKey="name" label={{ position: "insideBottomRight" }} />
         <YAxis
           label={{ value: "Active Users", angle: -90, position: "insideLeft" }}
         />
         <Tooltip />
-        <Legend
-          payload={[
-            { value: "Active Users", type: "line", color: "blue" }, // Custom label for the legend
-          ]}
-        />
-
+        <Legend />
         <Line type="monotone" dataKey="Active User" stroke="#8884d8" />
       </LineChart>
     </div>

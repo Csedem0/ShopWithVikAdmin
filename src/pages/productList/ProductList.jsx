@@ -57,7 +57,11 @@ export default function ProductList() {
 
   // Conditionally add the Stock column based on availability
   if (!hasUnavailableProducts) {
-    columns.splice(2, 0, { field: "inStock", headerName: "Stock", width: 200 });
+    columns.splice(3, 0, { field: "inStock", headerName: "Stock", width: 200 });
+  }
+
+  if (hasUnavailableProducts) {
+    columns.splice(2, 1, { field: "inStock", headerName: "Stock", width: 200 });
   }
 
   // Render the DataGrid with dynamically adjusted columns

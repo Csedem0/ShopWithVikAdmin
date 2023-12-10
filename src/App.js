@@ -13,9 +13,11 @@ import AllUser from "pages/allUser/AllUser";
 import Analytics from "pages/analytics/Analytics";
 import Activities from "pages/activities/Activities";
 import Sales from "pages/sales/Sales";
+import Revenue from "pages/revenue/Revenue";
 import Analysis from "pages/analysis/Analysis";
 import Message from "pages/message/Message";
 import SalesMetric from "pages/salesMetric/SalesMetric";
+import RevenueMetric from "pages/revenueMetric/RevenueMetric";
 import Login from "pages/login/Login";
 
 function App() {
@@ -37,9 +39,11 @@ function App() {
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/sales" element={<Sales />} />
+          <Route path="/revenue" element={<Revenue />} />
           <Route path="/analysis" element={<Analysis />} />
           <Route path="/mail" element={<Message />} />
           <Route path="/salesmetric" element={<SalesMetric />} />
+          <Route path="/revenuemetric" element={<RevenueMetric />} />
         </Routes>
       </div>
     </Router>

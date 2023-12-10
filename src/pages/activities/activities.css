@@ -6,7 +6,8 @@
 
 .analyzes {
   padding: 20px;
-  background-color: aqua;
+  background-color: #45b08c;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;

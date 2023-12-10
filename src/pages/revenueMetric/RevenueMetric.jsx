@@ -90,7 +90,7 @@ const SalesMetric = () => {
         ],
         datasets: [
           {
-            label: "Sales",
+            label: "Revenue",
             data: data,
             borderColor: "rgba(0, 0, 0, 1)",
             backgroundColor: [
@@ -204,7 +204,7 @@ const SalesMetric = () => {
   return (
     <div className="soyy">
       <nav>
-        <h1>Sales</h1>
+        <h1>Revenue</h1>
       </nav>
       <p>Click below on the selected options to filter the sales metric;</p>
       <div className="option">

@@ -64,18 +64,16 @@ export default function Home() {
     <div className="home">
       <FeaturedInfo />
 
-      <Chart
+      <LineChart
+        width={1000}
+        height={300}
         data={userStats}
         title="User Analytics"
         grid
-        dataKey="Active User"
-      />
-      <LineChart width={1000} height={300} data={userStats}>
+        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+      >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-          dataKey="Active User"
-          label={{ value: "Month", position: "insideBottomRight", offset: 0 }}
-        />
+        <XAxis dataKey="name" label={{ position: "insideBottomRight" }} />
         <YAxis
           label={{ value: "Active Users", angle: -90, position: "insideLeft" }}
         />
