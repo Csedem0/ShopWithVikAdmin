@@ -47,11 +47,12 @@ export default function Home() {
     const getStats = async () => {
       try {
         const res = await userRequest.get("/users/stats");
-        res.data.map((item) =>
-          setUserStats((prev) => [
-            ...prev,
-            { name: MONTHS[item._id - 1], "Active User": item.total },
-          ])
+        const sortedData = res.data.sort((a, b) => a._id - b._id);
+        setUserStats(
+          sortedData.map((item) => ({
+            name: MONTHS[item._id - 1],
+            "Active User": item.total,
+          }))
         );
       } catch {}
     };
@@ -68,6 +69,10 @@ export default function Home() {
         width={1000}
         height={300}
         data={userStats}
+        sort={{
+          type: "asc",
+          byKey: "name",
+        }}
         title="User Analytics"
         grid
         margin={{ top: 20, right: 30, left: 20, bottom: 5 }}

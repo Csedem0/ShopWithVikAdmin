@@ -212,10 +212,10 @@ const SalesMetric = () => {
           <select className="sale" id="saleFilter">
             <option value="">Select Year</option>
             <option value="hrs">2023</option>
-            <option value="days">2022</option>
-            <option value="months">2021</option>
-            <option value="hrs">2020</option>
-            <option value="days">2019</option>
+            <option value="">2022</option>
+            <option value="">2021</option>
+            <option value="">2020</option>
+            <option value="">2019</option>
           </select>
         </div>
         <div className="months">
