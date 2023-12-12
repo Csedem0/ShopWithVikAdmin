@@ -4,9 +4,7 @@ import "./salesmetric.css";
 
 const SalesMetric = () => {
   useEffect(() => {
-    const salesData = [
-      120, 150, 200, 180, 250, 220, 300, 280, 320, 400, 380, 420,
-    ];
+    const salesData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 400, 380, 420];
     const chart = createSalesChart(salesData);
 
     const saleFilter = document.getElementById("saleFilter");
@@ -118,75 +116,75 @@ const SalesMetric = () => {
         filteredData = generateRandomData(12, 100, 200);
         break;
       case "days":
-        filteredData = generateRandomData(12, 1000, 4000);
+        filteredData = generateRandomData();
         break;
       case "months":
-        filteredData = generateRandomData(12, 5000, 10000);
+        filteredData = generateRandomData();
         break;
       default:
-        filteredData = generateRandomData(120, 1000, 5000);
+        filteredData = generateRandomData();
         break;
     }
     updateSalesChart(chart, filteredData);
   };
 
   const january = (chart) => {
-    const january = [350, 280];
+    const january = [];
     updateSalesChart(chart, january);
   };
 
   const ferbuary = (chart) => {
-    const ferbuary = [120, 150, 200, 180, 250, 220, 300, 280];
+    const ferbuary = [];
     updateSalesChart(chart, ferbuary);
   };
   const march = (chart) => {
-    const march = [900, 50];
+    const march = [];
     updateSalesChart(chart, march);
   };
   const april = (chart) => {
-    const april = [700, 180];
+    const april = [];
     updateSalesChart(chart, april);
   };
   const may = (chart) => {
-    const may = [300, 280];
+    const may = [];
     updateSalesChart(chart, may);
   };
   const june = (chart) => {
-    const june = [80, 90];
+    const june = [];
     updateSalesChart(chart, june);
   };
   const july = (chart) => {
-    const july = [500, 900];
+    const july = [];
     updateSalesChart(chart, july);
   };
   const august = (chart) => {
-    const august = [310, 230];
+    const august = [];
     updateSalesChart(chart, august);
   };
   const september = (chart) => {
-    const september = [300, 280];
+    const september = [];
     updateSalesChart(chart, september);
   };
   const october = (chart) => {
-    const october = [70, 970];
+    const october = [0, 0, 0, 0, 0, 0, 0, 0, 0, 250];
     updateSalesChart(chart, october);
   };
   const november = (chart) => {
-    const november = [303, 30];
+    const november = [0, 0, 0, 0, 0, 0, 0, 0, 0, 250, 100];
     updateSalesChart(chart, november);
   };
   const december = (chart) => {
-    const december = [870, 280];
+    const december = [0, 0, 0, 0, 0, 0, 0, 0, 0, 250, 100, 150];
     updateSalesChart(chart, december);
   };
 
   const monthWithMostSales = (chart) => {
-    const mostSalesData = [300, 30];
+    const mostSalesData = [0, 0];
     updateSalesChart(chart, mostSalesData);
   };
 
   const monthWithLeastSales = (chart) => {
-    const leastSalesData = [120, 150, 200, 180, 250, 220, 300, 280];
+    const leastSalesData = [0, 0, 0, 0, 0, 0, 0, 0];
     updateSalesChart(chart, leastSalesData);
   };
 
@@ -212,10 +210,10 @@ const SalesMetric = () => {
           <select className="sale" id="saleFilter">
             <option value="">Select Year</option>
             <option value="hrs">2023</option>
-            <option value="days">2022</option>
-            <option value="months">2021</option>
-            <option value="hrs">2020</option>
-            <option value="days">2019</option>
+            <option value="">2022</option>
+            <option value="">2021</option>
+            <option value="">2020</option>
+            <option value="">2019</option>
           </select>
         </div>
         <div className="months">
