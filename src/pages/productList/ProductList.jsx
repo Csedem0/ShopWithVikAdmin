@@ -36,6 +36,13 @@ export default function ProductList() {
     },
     { field: "price", headerName: "Price", width: 160 },
     {
+      field: "quantity",
+      headerName: "Quantity",
+      width: 120,
+      editable: true, // Make the column editable if needed
+    },
+
+    {
       field: "action",
       headerName: "Action",
       width: 150,
